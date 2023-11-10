@@ -15,7 +15,7 @@ export default function Page() {
     if (loading) return;
     setLoading(true);
     const host = window.location.host;
-    const url = `http://${host}/api/user`;
+    const url = `https://${host}/api/user`;
     const resp = await fetch(url, {
       method: "POST",
       headers: {

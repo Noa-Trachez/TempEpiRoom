@@ -75,7 +75,7 @@ export default function Home() {
   async function fetchContent() {
     try {
       const host = window.location.host;
-      const url = `http://${host}/api/planning`;
+      const url = `https://${host}/api/planning`;
       const response = await fetch(url, {
         method: "POST",
         headers: {
