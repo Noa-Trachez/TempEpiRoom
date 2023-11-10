@@ -87,7 +87,8 @@ export default function Home() {
   async function fetchContent() {
     try {
       const host = window.location.host;
-      const url = `https://${host}/api/planning`;
+      const protocol = window.location.protocol;
+      const url = `${protocol}//${host}/api/planning`;
       const response = await fetch(url, {
         method: "GET",
       });
