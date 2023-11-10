@@ -4,7 +4,15 @@ import LOCATION from "@/final.location.json";
 import Starfield from "@/Components/StarField";
 import LoadingIndicator from "@/Components/LoadingIndicator";
 
-function DrawDateProgress({ start, end }: { start: string; end: string }) {
+function DrawDateProgress({
+  start,
+  end,
+  isStarted,
+}: {
+  start: string;
+  end: string;
+  isStarted: boolean;
+}) {
   const now = new Date();
   const startDate = new Date(start);
   const endDate = new Date(end);
@@ -12,7 +20,7 @@ function DrawDateProgress({ start, end }: { start: string; end: string }) {
   const endDiff = endDate.getTime() - startDate.getTime();
   const progress = (startDiff / endDiff) * 100;
   const style = {
-    width: `${progress}%`,
+    width: `${isStarted ? progress : 0}%`,
     height: "100%",
     backgroundColor: "black",
   };
@@ -57,7 +65,11 @@ function DisplayRoom({ room, roomEvent }: { room: string; roomEvent: any[] }) {
           <p className="text-center py-5">{event.acti_title}</p>
           <div className="flex flex-row">
             <p>{startString}</p>
-            <DrawDateProgress start={event.start} end={event.end} />
+            <DrawDateProgress
+              start={event.start}
+              end={event.end}
+              isStarted={isCurrent}
+            />
             <p>{endString}</p>
           </div>
         </div>
@@ -75,16 +87,9 @@ export default function Home() {
   async function fetchContent() {
     try {
       const host = window.location.host;
-      const url = `https://${host}/api/planning`;
+      const url = `http://${host}/api/planning`;
       const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Cookie:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpbiI6Im5vYS50cmFjaGV6QGVwaXRlY2guZXUiLCJ0eiI6bnVsbCwiZXhwIjoxNzAwMTQ3OTcxfQ.-yOpBQmpIPk-VH0UBWkZW0P_sc3Qfp81Jr94tN9QZTE",
-        }),
+        method: "GET",
       });
       const data = await response.json();
       if (Array.isArray(data)) {

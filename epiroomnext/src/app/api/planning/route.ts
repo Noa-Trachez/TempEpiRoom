@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
-export async function POST(request: Request) {
+export async function GET(request: Request) {
   if (!request) return NextResponse.error();
-  const body = await request.json();
   const date = new Date().toISOString().split("T")[0];
   const url =
     "https://intra.epitech.eu/planning/load?format=json&start=" +
@@ -13,7 +12,7 @@ export async function POST(request: Request) {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Cookie: "user=" + body.Cookie,
+      Cookie: "user=" + process.env.EPITECH_COOKIE,
     },
   });
 
