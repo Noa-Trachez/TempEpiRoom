@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
 export async function GET(request: Request) {
   if (!request) return NextResponse.error();
-  const date = new Date().toISOString().split("T")[0];
+  let newDate = new Date().toLocaleString("fr-EU", {timeZone: "Europe/Paris"});
+  newDate = newDate.split(" ")[0];
+  newDate = newDate.split("/").reverse().join("-");
   const url =
     "https://intra.epitech.eu/planning/load?format=json&start=" +
-    date +
+    newDate +
     "&end=" +
-    date;
+    newDate;
 
   const response = await fetch(url, {
     method: "GET",

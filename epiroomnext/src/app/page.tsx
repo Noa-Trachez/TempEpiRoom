@@ -45,7 +45,7 @@ function DisplayRoom({ room, roomEvent }: { room: string; roomEvent: any[] }) {
         style={{ backgroundColor: "#069C56" }}
         className="rounded-md m-2 p-5"
       >
-        <h1 className="text-center font-bold">{room}</h1>
+        <h1 className="text-center font-bold text-white">{room}</h1>
       </div>
     );
 
@@ -59,18 +59,18 @@ function DisplayRoom({ room, roomEvent }: { room: string; roomEvent: any[] }) {
       style={{ backgroundColor: isCurrent ? "#D3212C" : "#FF980E" }}
       className="rounded-md m-2 p-5"
     >
-      <h1 className="text-center font-bold">{room}</h1>
+      <h1 className="text-center font-bold text-white">{room}</h1>
       <div className="flex flex-col">
         <div className="flex flex-col w-full">
-          <p className="text-center py-5">{event.acti_title}</p>
+          <p className="text-center py-5 text-white">{event.acti_title}</p>
           <div className="flex flex-row">
-            <p>{startString}</p>
+            <p className="text-white">{startString}</p>
             <DrawDateProgress
               start={event.start}
               end={event.end}
               isStarted={isCurrent}
             />
-            <p>{endString}</p>
+            <p className="text-white">{endString}</p>
           </div>
         </div>
       </div>
