@@ -128,7 +128,7 @@ export default function Home() {
 
   return (
     <div className="bg-black h-screen w-screen overflow-y-scroll">
-      <div className="grid auto-rows-fr grid-cols-3 gap-4 grid-flow-row">
+      <div className="grid auto-rows-fr grid-cols-1 md:grid-cols-3 gap-4 grid-flow-row">
         {roomList.map((e, index) => (
           <DisplayRoom
             key={index}
