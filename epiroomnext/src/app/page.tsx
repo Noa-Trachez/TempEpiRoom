@@ -91,6 +91,7 @@ export default function Home() {
       const url = `${protocol}//${host}/api/planning`;
       const response = await fetch(url, {
         method: "GET",
+        cache: "no-store",
       });
       const data = await response.json();
       if (Array.isArray(data)) {
