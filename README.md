@@ -61,3 +61,4 @@ Before you begin, ensure you have the following installed on your machine:
 
 ## Screenshots
 ![img.png](img.png)
+![img_1.png](img_1.png)
