@@ -89,9 +89,18 @@ export default function Home() {
       const host = window.location.host;
       const protocol = window.location.protocol;
       const url = `${protocol}//${host}/api/planning`;
+      const year = new Date().getUTCFullYear();
+      const month = new Date().getUTCMonth() + 1;
+      const day = new Date().getUTCDate();
+      const date = `${year}-${month}-${day}`;
       const response = await fetch(url, {
-        method: "GET",
-        cache: "no-store",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          date: date,
+        }),
       });
       const data = await response.json();
       if (Array.isArray(data)) {

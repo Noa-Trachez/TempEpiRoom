@@ -1,11 +1,8 @@
 import { NextResponse } from "next/server";
-export async function GET(request: Request) {
+export async function POST(request: Request) {
   if (!request) return NextResponse.error();
-  let newDate = new Date().toLocaleString("fr-EU", {
-    timeZone: "Europe/Paris",
-  });
-  newDate = newDate.split(" ")[0];
-  newDate = newDate.split("/").reverse().join("-");
+  const body = await request.json();
+  const newDate = body.date;
   const url =
     "https://intra.epitech.eu/planning/load?format=json&start=" +
     newDate +
