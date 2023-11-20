@@ -1,5 +1,6 @@
 import DrawDateProgress from "@/Components/DrawDateProgress";
 import Acti from "@/Interface/acti.interface";
+import "@/app/globals.css";
 
 interface DrawRoomProps {
   room: string;
