@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import "@/app/globals.css";
+import "../globals.css";
 
 interface DrawDateProgressProps {
   start: string;

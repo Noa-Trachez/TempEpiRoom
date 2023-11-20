@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import LOCATION from "@/final.location.json";
-import Starfield from "@/Components/StarField";
-import LoadingIndicator from "@/Components/LoadingIndicator";
+import Starfield from "@/app/Components/StarField";
+import LoadingIndicator from "@/app/Components/LoadingIndicator";
 import AppService from "@/Service/AppService";
-import DrawRoom from "@/Components/DrawRoom";
+import DrawRoom from "@/app/Components/DrawRoom";
 import Acti, { ActiInterface } from "@/Interface/acti.interface";
 import LocationInterface from "@/Interface/location.interface";
 
