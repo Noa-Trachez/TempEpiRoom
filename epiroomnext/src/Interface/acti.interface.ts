@@ -7,6 +7,7 @@ interface ActiInterface {
   location: string;
   type_room: string;
   title: string;
+  acti_title: string;
   has_to_rate: boolean;
   event_registered: null;
   registered: number;
@@ -42,7 +43,7 @@ class Acti {
     this.id = _acti.id;
     this.end = _acti.end;
     this.start = _acti.start;
-    this.title = _acti.title;
+    this.title = _acti.acti_title;
     this.roomCode = _acti?.room?.code;
   }
 }
