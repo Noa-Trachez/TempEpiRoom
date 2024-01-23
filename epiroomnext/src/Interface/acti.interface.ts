@@ -43,8 +43,8 @@ class Acti {
     this.id = _acti.id;
     this.end = _acti.end;
     this.start = _acti.start;
-    this.title = _acti.acti_title;
-    this.roomCode = _acti?.room?.code;
+    this.title = _acti.acti_title ?? _acti.title ?? "N/A";
+    this.roomCode = _acti?.room?.code ?? _acti.location ?? "N/A";
   }
 }
 

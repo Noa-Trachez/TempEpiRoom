@@ -17,6 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon-512x512.png"></link>
+        <link rel="icon" href="/icon-256x256.png" />
+        <title>EpiRoom</title>
+      </head>
       <body className={inter.className}>
         <MyLayout>{children}</MyLayout>
       </body>
