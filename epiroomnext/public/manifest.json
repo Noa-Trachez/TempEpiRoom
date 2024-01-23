@@ -1,11 +1,11 @@
 {
-    "theme_color": "#005698",
+    "theme_color": "#000000",
     "background_color": "#000000",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Epiroom",
-    "short_name": "Epi",
+    "name": "Epi-Room",
+    "short_name": "EpiRoom",
     "description": "Room information",
     "icons": [
         {
